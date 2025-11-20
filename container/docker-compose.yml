@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: container/Dockerfile
+    image: ${CONTAINER_IMAGE:-modernization-agent-app}
+    environment:
+      - APP_PORT=8080
+    ports:
+      - "8080:8080"
